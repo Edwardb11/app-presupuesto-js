@@ -15,7 +15,6 @@ body {
     font-family: Open Sans;
     font-size: 16px;
     position: relative;
-    height: 100vh;
     font-weight: 400;
 }
 
@@ -28,9 +27,6 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    width: 100%;
-    padding-top: 150px;
-    padding-bottom: 100px;
     color: #fff;
     background: url(fondo.png), #7b4397;
     background: url(fondo.png), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
@@ -171,17 +167,22 @@ body {
 .contenedor {
     width: 860px;
     margin: 60px auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .ingreso {
     float: left;
     width: 370px;
     margin-right: 70px;
+    flex: 50%;
+
 }
 
 .egreso {
     float: left;
     width: 370px;
+    flex: 50%;
 }
 
 h2 {
@@ -256,3 +257,18 @@ h2 {
 .elemento:hover .elemento_eliminar--btn { display: block; }
 .elemento:hover .elemento_valor { transform: translateX(-20px); }
 .elemento:hover .elemento_porcentaje { transform: translateX(-20px); }
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+    .contenedor {
+      flex-direction: column;
+      width: auto;
+    }
+    .ingreso{
+        width: auto;
+        margin-bottom: 50px;
+    }
+    .egreso{
+        width: auto;
+    }
+  }
